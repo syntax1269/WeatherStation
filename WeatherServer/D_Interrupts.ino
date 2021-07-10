@@ -26,8 +26,18 @@ void IRAM_ATTR handler()
   static unsigned int IbytesReceived = 0;                                                                                                   
  
   bitState = digitalRead(DATAPIN);
-  digitalWrite(LED_BUILTIN, !bitState);                                   // have LED mimic state of RF signal
+  //digitalWrite(LED_BUILTIN, !bitState);                                   // have LED mimic state of RF signal
 
+   
+   // January 12, 2021, 11:38:48 AM » Some library changes have effected the code for the BMP280.
+   //  If you want to use a BMP280 with this, you need to comment out the following lines:
+   digitalWrite(LED_BUILTIN, !bitState); 
+   /*
+   digitalWrite(LED_BUILTIN, HIGH); // start with LED off   - E_Setup
+   pinMode(LED_BUILTIN, OUTPUT); // LED output   - E_Setup
+   */
+   
+   
   long time = micros();                                                   // calculating timing since last change
   duration = time - lastTime;
   lastTime = time;
