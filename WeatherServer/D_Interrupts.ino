@@ -13,7 +13,8 @@
    Change the state of the Arduino LED (pin 13) on each interrupt.
    This allows scoping pin 13 to see the interrupt / data pulse train.
 */
-void handler()
+void IRAM_ATTR handler()
+//void handler() //January 05, 2021, 11:38:41 PM » A change in the Arduino IDE that requires this modification.
 {
   static unsigned long duration = 0;
   static unsigned long lastTime = 0;
