@@ -10,7 +10,19 @@ void setup()
   Serial.println();
   Serial.println("Acurite Receive Started...");
   #endif
-
+  
+/*************************************************
+ *** January 12, 2021, 11:38:48 AM »
+ *** Some library changes have effected the code for the BMP280.  
+ *** If you want to use a BMP280 with this, you need to find and comment out the following lines:
+ *** 
+ *** digitalWrite(LED_BUILTIN, !bitState);    - in D_Interrupts
+ *** 
+ *** digitalWrite(LED_BUILTIN, HIGH); // start with LED off   - E_Setup
+ *** pinMode(LED_BUILTIN, OUTPUT); // LED output   - E_Setup
+ ***********************************************/
+  
+  
   pinMode(LED_BUILTIN, OUTPUT);                                           // LED output
   digitalWrite(LED_BUILTIN, HIGH);                                        // start with LED off
   
